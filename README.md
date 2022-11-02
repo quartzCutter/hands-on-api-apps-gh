@@ -6,18 +6,23 @@ You can find the code snippets used and required in this README.
 
 ## Installation 
 
-Use the download button above to add this repo to your dev folder. If you don't have one, create it in the same folder as your Documents, Downloads and Images folders.
+Use the download button above (`Code > Download`) to add this repo to your dev folder. If you don't have one, create it in the same folder as your Documents, Downloads and Images folders.
 
+You will need to install the [Postman API Client](https://www.postman.com/downloads/). You can skip creating an account for now.
+
+You will need a code editor, and [Visual Studio Code](https://code.visualstudio.com/download) is strongly recommended.
+
+The optional part of this tutorial requires [NodeJS](https://nodejs.org/en/download/) to be installed to your machine.
 
 ## 01. Getting Data - NASA
 
-We will <em>Get</em> (**Read**) data from NASA to inspect within Postman. 
+We will <em>Get</em> (**Read**) data from NASA to inspect within **Postman**. 
 Select one from this options here [NASA RSS Feeds](https://www.nasa.gov/content/nasa-rss-feeds  
 )
 
 ## 02. Getting Data - OData
 
-We will <em>Get</em> (**Read**) data from an OData demo source to inspect within Postman. 
+We will <em>Get</em> (**Read**) data from an OData demo source to inspect within **Postman**. 
 We will use [Northwind OData Service](https://services.odata.org/V3/Northwind/Northwind.svc/)
 
 First, we'll inspect the XML document we receive, and in the next step will add parameters to work in JSON, add filters and more.
