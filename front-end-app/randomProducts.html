@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<header>
+    <title>API Shop</title>
+    <link rel="stylesheet" href="style.css">
+</header>
+
+<body>
+    <content>
+        <h1>
+            Special Offer!
+        </h1>
+        <div id="cardContainer">
+            <div id="demoCard" class="productCard">
+                Loading product details...
+            </div>
+        </div>
+    </content>
+</body>
+
+
+<script>
+
+    const htmlCard=document.getElementById("demoCard");
+    var productData;
+
+    var randomProductID = Math.floor(Math.random() * 20) + 1;
+    const urlStringWithRandomNumber = "https://services.odata.org/V3/Northwind/Northwind.svc/Products(" + randomProductID + ")?$format=json";
+
+    function getExternalData() {
+        // Paste Javascript XHR API Call below here
+        // Example Target URL: https://services.odata.org/V3/Northwind/Northwind.svc/Products(9)?$format=json
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = false;
+        xhr.addEventListener("readystatechange", function() {
+        if(this.readyState === 4) {
+            console.log(this.responseText);
+
+            var dataFromAPI = JSON.parse(this.responseText);
+            productData = dataFromAPI;
+            //console.log(productData);
+
+        }
+        });
+        xhr.open("GET", urlStringWithRandomNumber);
+        xhr.send();
+        // Paste Javascript XHR API Call above here
+    }
+
+    function updateCard() {
+        if (productData != null) {
+            var productName = productData.ProductName;
+            var productPrice = productData.UnitPrice;
+            var productQuantity = productData.QuantityPerUnit;
+            var productID = productData.ProductID;
+            var productButton = "<a href='https://youtu.be/dQw4w9WgXcQ' target='_blank'><button type='button'>Buy now!</button></a>";
+            htmlCard.innerHTML = "<p>Product Name: <b>" + productName + "</b><br>Product Price: <b>" + productPrice + "</b><br>Product Quantity: <b>" + productQuantity + "</b><br>Product ID: <b>" + productID + "</b></p>" + productButton;
+            // InnerHTML is NOT for use in productive apps
+        } else {
+            htmlCard.innerHTML = "Pardon our dust... Something went wrong!"
+            // InnerHTML is NOT for use in productive apps
+        }
+    }
+
+    getExternalData();
+    setTimeout(updateCard, 1500);
+</script>
+</html>

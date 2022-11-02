@@ -1,0 +1,5 @@
+---
+applications:
+- name: ticketBot
+  memory: 128mb
+  instances: 1

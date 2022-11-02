@@ -1,0 +1,16 @@
+{
+  "name": "a-networked-node-app",
+  "description": "A node server to handle simple messages",
+  "version": "1.0.0",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "request": "^2.88.0"
+  },
+  "engines": {
+    "node": "6.X.X"
+  },
+  "scripts": {
+    "start": "node start.js"
+  }
+}
